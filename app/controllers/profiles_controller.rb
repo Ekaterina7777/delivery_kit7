@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user_profile, only: [:edit, :update]
+  before_action :set_user_profile, only: [:edit, :update, :destroy]
   def show
   end
     
@@ -20,7 +20,11 @@ class ProfilesController < ApplicationController
     end
   end
 
-  
+  def destroy
+    @profile.destroy
+    redirect_to root_url, notice: 'Профиль успешно удален'
+  end
+
   private
 
   def set_user_profile
@@ -28,6 +32,7 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.permit(:last_name, :first_name,) # Здесь добавьте другие поля профиля, которые вы хотите редактировать
+    params.permit(:last_name, :first_name,) 
   end
+
 end

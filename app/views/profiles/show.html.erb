@@ -1,4 +1,4 @@
-<h1> Добро пожаловать на сайт "Delivery Kit" </h1>
+<h1> Delivery Kit </h1>
 
 <hr>
 
@@ -9,8 +9,12 @@
 
 <%= link_to 'Редактировать профиль', edit_profiles_path %>
 
+<p>
 
+<%= button_to 'Удалить профиль', profiles_path, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>
+
+</p>
 
 <hr>
 
-<p> <%= link_to 'Logout', logout_path, method: :get %> </p>
+<p> <%= link_to 'Выйти', logout_path, method: :get %> </p>

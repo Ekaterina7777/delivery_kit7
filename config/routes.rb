@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   get '/logout', to: 'profiles#logout', as: 'logout'
 
   
-  resource :profiles, only: [:edit, :update]
+  resource :profiles, only: [:edit, :update, :destroy]
  
+  delete 'profiles/:id', to: 'profiles#destroy', as: 'delete_profile'
 
   root to: "home#index"
 end
