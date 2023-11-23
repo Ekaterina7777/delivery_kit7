@@ -14,6 +14,12 @@ Rails.application.routes.draw do
     root 'profiles#show', as: :authenticated_root
   end
 
+  get '/logout', to: 'profiles#logout', as: 'logout'
+
+  
+  resource :profiles, only: [:edit, :update]
+ 
+
   root to: "home#index"
 end
 

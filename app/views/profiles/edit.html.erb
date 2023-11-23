@@ -1,0 +1,11 @@
+  <h1>Редактировать профиль</h1>
+
+  <%= form_tag profiles_path, method: :patch do %>
+    <%= text_field_tag :first_name, @profile.first_name %>
+  
+    <%= text_field_tag :last_name, @profile.last_name %>
+  
+    <%= button_to 'Сохранить изменения' %>
+  <% end %>
+
+<%= link_to "Back", :back %>
