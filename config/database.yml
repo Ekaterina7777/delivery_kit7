@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+  username: delivery_kit
+  password: 12345678
+
+development:
+  <<: *default
+  database: "development_delivery_kit"
+
+test:
+  <<: *default
+  database: "test_delivery_kit"
+
+production:
+  <<: *default
+  database: "production_delivery_kit"
+  
