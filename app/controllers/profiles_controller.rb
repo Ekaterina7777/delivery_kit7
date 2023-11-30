@@ -1,8 +1,21 @@
 class ProfilesController < ApplicationController
   before_action :set_user_profile, only: [:edit, :update, :destroy]
   def show
+    if current_user.manager?
+      redirect_to manager_profiles_url
+    else 
+      redirect_to customer_profiles_url
+    end
   end
     
+  def manager
+
+  end
+
+  def customer
+  
+  end
+
   def logout
      reset_session
      redirect_to root_path

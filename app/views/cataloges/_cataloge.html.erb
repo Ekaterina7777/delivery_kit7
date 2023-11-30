@@ -1,0 +1,15 @@
+<div id="<%= dom_id cataloge %>">
+  <p>
+    <strong>Title:</strong>
+    <%= cataloge.title %>
+  </p>
+
+</div>
+<table> 
+  <% cataloge.products.each do |product| %>
+    <tr> 
+    <td> <%= product.title %> </td>
+    <td> <%= number_to_currency product.price %> </td>
+    </tr>
+  <% end %>
+</table>

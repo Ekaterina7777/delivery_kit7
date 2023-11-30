@@ -1,0 +1,24 @@
+<h1> Delivery Kit </h1>
+
+<hr>
+
+<p> Здравствуйте <%= current_user.first_name %> </p>
+<p> Ваш email: <%= current_user.email %> </p>
+<p> Ваша фамилия: <%= current_user.last_name %> </p>
+<p> Ваше имя: <%= current_user.first_name %> </p>
+<p> Ваша роль: <%= current_user.role %> </p>
+
+<%= link_to 'Редактировать профиль', edit_profiles_path %>
+
+<p>
+
+<%= button_to 'Удалить профиль', profiles_path, method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger' %>
+
+</p>
+
+<%= link_to 'Каталог продуктов', cataloges_path  %>
+<br /> 
+<%= link_to 'Список продуктов', products_path  %>
+<hr>
+
+<p> <%= link_to 'Выйти', logout_path, method: :get %> </p>

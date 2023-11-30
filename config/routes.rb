@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+  resources :cataloges
  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,7 +19,12 @@ Rails.application.routes.draw do
   get '/logout', to: 'profiles#logout', as: 'logout'
 
   
-  resource :profiles, only: [:edit, :update, :destroy]
+  resource :profiles, only: [:edit, :update, :destroy] do  
+    collection do 
+      get :manager
+      get :customer
+    end
+  end
  
   delete 'profiles/:id', to: 'profiles#destroy', as: 'delete_profile'
 

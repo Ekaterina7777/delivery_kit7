@@ -1,0 +1,22 @@
+<%= form_with(model: cataloge) do |form| %>
+  <% if cataloge.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cataloge.errors.count, "error") %> prohibited this cataloge from being saved:</h2>
+
+      <ul>
+        <% cataloge.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
