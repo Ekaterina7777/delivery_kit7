@@ -1,0 +1,28 @@
+
+<section id="menu">
+    <div class="container">
+      <h2>Наше меню</h2>
+
+    <div class="product-cards">
+    <% @products.each do |product| %>
+    
+            <div class="product-card even">
+                <div class="product-image">
+                    <!-- Фото товара -->
+                    <img src="pizza.png" alt="Product 1">
+                </div>
+                <div class="product-details">
+                    <!-- Название, описание, цена, кнопка -->
+                    <h2><%= product.title %></h2>
+                    <div class="price-and-size">
+                    <p class="price"><%= product.price %> &#8381;</p>
+                    <p class="size">Размер: 30см</p>
+                    </div>
+                    <button class="buy-button">Добавить в корзину</button>
+                    <p><%= product.cataloge.title %></p>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</section>

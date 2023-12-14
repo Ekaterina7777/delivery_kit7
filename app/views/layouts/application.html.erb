@@ -1,19 +1,52 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>DeliveryKit</title>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
+    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_01.css">
+    <title>Доставка еды из ресторана</title>
+</head>
+<body>
 
-  <body>
+  <header>
+    <div class="container">
+      <h1>ресторан &#0171;уютная традиция&#0187;</h1>
+      <nav>
+        <ul>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
-  
- </body>
+   <section id="contact">
+    <div class="container">
+      <h2>Контакты</h2>
+      <p>Свяжитесь с нами для заказа или уточнения информации:</p>
+      <address>
+        <p>Email: info@restaurant.com</p>
+        <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+      </address>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Наш ресторан. Все права защищены.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
+
