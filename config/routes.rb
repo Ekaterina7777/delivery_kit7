@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   delete 'profiles/:id', to: 'profiles#destroy', as: 'delete_profile'
   
   get 'shop/index', as: 'shop'
+  post 'card/create', as: 'add_card'
+  get 'card/index', as: 'card'
   root to: "home#index"
 end
 

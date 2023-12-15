@@ -1,0 +1,13 @@
+
+<section id="menu">
+    <div class="container">
+      <h2>Корзина</h2>
+
+    <div class="cards">
+    <% @cards.each do |card| %>
+     <h2> <%= card.product.title %> <%= card.count %> шт. </h2>
+    
+          <% end %>
+        </div>
+    </div>
+</section>

@@ -18,8 +18,12 @@
                     <p class="price"><%= product.price %> &#8381;</p>
                     <p class="size">Размер: 30см</p>
                     </div>
-                    <button class="buy-button">Добавить в корзину</button>
+                    <%= form_tag add_card_path do %>
+                    <%= hidden_field_tag :product_id, product.id %>
+                    <button class="buy-button">Добавить в корзину </button>
+                    <% end %>
                     <p><%= product.cataloge.title %></p>
+                    
                 </div>
             </div>
             <% end %>
